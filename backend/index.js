@@ -1,4 +1,10 @@
+
+require('dotenv').config();
+
 const express = require('express');
+
+const connectDB = require('./config/db');
+
 
 const app = express();
 const port = 6000;
@@ -12,3 +18,4 @@ app.post('/api', (req, res) => {
 
 app.listen(6000,(req,res)=>{console.log("serveur lance sur le port 6000")
 });
+connectDB();
