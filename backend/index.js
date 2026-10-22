@@ -1,21 +1,30 @@
-
 require('dotenv').config();
 
 const express = require('express');
-
-const connectDB = require('./config/db');
-
+const cors = require('cors');
+const path = require('path');
 
 const app = express();
-const port = 6000;
+const port = 5500;
+const connectDB = require('./config/db');
+
+// Connexion à la base de données
+connectDB();
+const corsOptions = {
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS']
+};
+
+app.use(cors(corsOptions));
+app.use(express.json());
+
+// Servir les fichiers du frontend
+app.use(express.static(path.join(__dirname, '../frontend')));
 
 app.get('/', (req, res) => {
-    res.send('Rah khdam mzyannnnn a mr othman!!!!!');
-});
-app.post('/api', (req, res) => {
-    res.send('Rah khdam mzyannnnn a mr othman!!!!!');
+    res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
 
-app.listen(6000,(req,res)=>{console.log("serveur lance sur le port 6000")
+app.listen(port, () => {
+    console.log(`Serveur lancé sur le port ${port}`);
 });
-connectDB();
