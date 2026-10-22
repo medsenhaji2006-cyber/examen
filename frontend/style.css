@@ -1,4 +1,14 @@
-h1{
-    text-align: center;
-    color: #333;    
-}
+* { box-sizing: border-box; }
+body { font-family: system-ui, sans-serif; background: #f4f5f7; margin: 0; color: #222; }
+.container { max-width: 640px; margin: 0 auto; padding: 1.5rem 1rem; }
+h1 { text-align: center; }
+form { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+input { flex: 1 1 160px; padding: .6rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; }
+button { padding: .6rem 1.2rem; border: 0; border-radius: 6px; background: #2563eb; color: #fff; font-size: 1rem; cursor: pointer; }
+button:disabled { opacity: .6; cursor: not-allowed; }
+ul { list-style: none; padding: 0; }
+li { background: #fff; padding: .8rem 1rem; border-radius: 8px; margin-bottom: .5rem; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+li small { display: block; color: #666; }
+.error { background: #fee2e2; color: #991b1b; padding: .7rem 1rem; border-radius: 6px; }
+.info { color: #555; text-align: center; font-size: .9rem; }
+@media (max-width: 480px) { button { width: 100%; } }

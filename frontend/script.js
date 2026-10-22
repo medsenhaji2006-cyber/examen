@@ -1,8 +1,8 @@
-fetch('http://localhost:5500/')
-    .then(response => response.text())
-    .then(data => {
-        console.log("Réponse du backend :", data);
-    })
-    .catch(error => {
-        console.error("Erreur :", error);
-    });
+window.APP_CONFIG = {
+  // Premier = principal, second = secours. Pour inverser, échange les deux lignes.
+  BACKENDS: [
+    "https://mern-prenom-api.<subdomaine>.workers.dev", // Cloudflare
+    "https://<ton-projet>.vercel.app"                   // Vercel
+  ],
+  TIMEOUT_MS: 6000
+};

@@ -1,17 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-   
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <linkrel="stylesheet" href="style.css">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mes éléments</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <main class="container">
+    <h1>Mes éléments</h1>
+    <p id="backend-info" class="info"></p>
 
-    <h1>Welcome to My Website</h1>
-    <p>This is a sample webpage.</p>
+    <form id="item-form">
+      <input id="name" type="text" placeholder="Nom" required />
+      <input id="description" type="text" placeholder="Description" />
+      <button id="submit-btn" type="submit">Ajouter</button>
+    </form>
 
-    <script src="script.js"></script>
+    <p id="error" class="error" hidden></p>
+    <p id="loading" class="info" hidden>Chargement...</p>
+
+    <ul id="items"></ul>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
